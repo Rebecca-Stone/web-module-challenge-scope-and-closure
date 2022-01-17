@@ -28,11 +28,16 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+    counter1 has a variable called count inside its scope, so it will reset every time we call the function.
+    counter2 has a variable called count in the global scope, so it will not reset every time the function is called.
+
   2. Which of the two uses a closure? How can you tell?
+    counter1 has a closure because it has a function nestled inside that calls/returns information to the outer function.
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     counter1 would be preferred if you need to rest the count, before using again.
+     counter2 would be preferred if you wanted to continuously keep and update the count. 
 */
 
 // counter1 code
@@ -63,9 +68,10 @@ NOTE: This will be a callback function for the tasks below
 */
 
 function inning(/*Code Here*/){
-    /*Code Here*/
+   return (Math.floor(Math.random()*(3+1)));
 }
 
+console.log('Task 2', inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
